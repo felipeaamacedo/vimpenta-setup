@@ -4,11 +4,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
+Plug 'leafgarland/typescript-vim'
 
 " Initialize plugin system
 call plug#end()
-
-
 
 "VIM NAVIGATION COMMANDS
 "split navigations
@@ -17,6 +16,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"VIM LANGUAGE SETTING
+filetype on
+filetype plugin on
 
 "STYLING CONFIGURATION
 "colorscheme
