@@ -8,6 +8,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'morhetz/gruvbox'
+Plug 'mlaursen/vim-react-snippets'
+
 
 "Plugins de typefiles para o VIM interpretar os arquivos
 Plug 'leafgarland/typescript-vim'
