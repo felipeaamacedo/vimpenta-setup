@@ -3,10 +3,17 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'sheerun/vim-polyglot'
+Plug 'yuezk/vim-js'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'raimondi/delimitmate'
+
 
 " Initialize plugin system
 call plug#end()
@@ -14,13 +21,18 @@ call plug#end()
 "-- VISUAL CONFIGURATION --
 set number
 set relativenumber
+set tabstop=4
+
+"--SETING VISUAL CONFIGURATION--
+colorscheme gruvbox
+set bg=dark
 
 "-- AUTOMATIC CLOSURE --
-inoremap " ""<left> 
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
+"inoremap " ""<left> 
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
 
 "NERDTREE ctrl+n
 map <C-n> :NERDTreeToggle<CR>
