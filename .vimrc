@@ -1,52 +1,54 @@
-"VIM PLUGIN MANAGEMENT"
+"" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+Plug 'yuezk/vim-js'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'chemzqm/vim-jsx-improve'
 Plug 'dense-analysis/ale'
-Plug 'scrooloose/nerdtree'
+
+
 Plug 'morhetz/gruvbox'
-Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'raimondi/delimitmate'
 
 " Initialize plugin system
 call plug#end()
 
-"VIM NAVIGATION COMMANDS
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-"VIM LANGUAGE SETTING
-filetype on
-filetype plugin on
-
-"STYLING CONFIGURATION
-"colorscheme
-colo gruvbox
-set bg=dark
-syntax on
-
-"line numbering
-set nu
+"-- VISUAL CONFIGURATION --
+set number
 set relativenumber
+set cmdheight=2
+
+"--SETING VISUAL CONFIGURATION--
+colorscheme gruvbox
+set bg=dark
+
+"-- AUTOMATIC CLOSURE --
+"inoremap " ""<left> 
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
 
 "NERDTREE ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
-"ALE-VIM CONFIG
-"allow ALE to do autocomplete
+"NERDCOMMENTER  press "number of lines or 0 to 1 + , + cc to nerdCommenterComment or uc to
+"nerdCommentUnrcomment
+let mapleader=","
+set timeout timeoutlen=1500
+
+
+"-- ALE VIM CONFIG
 let g:ale_completion_enabled = 1
-"allow ALE to automaticaly imports from external modules
-let g:ale_completion_tsserver_autoimport = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_autoimport = 1
 
-"ALE ERRORS
-let b:ale_fixers = ['prettier', 'eslint']
-
-let b:ale_fix_on_save = 1
-let g:ale_sign_column_always = 1
-let g:ale_list_window_size = 5
-
-
-"navigating between errors
+"Navigate between errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
