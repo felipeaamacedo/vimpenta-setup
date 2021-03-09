@@ -11,13 +11,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'yuezk/vim-js'
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'dense-analysis/ale'
-
+Plug 'mattn/emmet-vim'
 
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'raimondi/delimitmate'
+Plug 'tpope/vim-surround'
 
 " Initialize plugin system
 call plug#end()
@@ -30,6 +31,10 @@ set cmdheight=2
 "--SETING VISUAL CONFIGURATION--
 colorscheme gruvbox
 set bg=dark
+"set bg=light
+set listchars=tab:\|\ 
+set list
+set tabstop=4
 
 "-- AUTOMATIC CLOSURE --
 "inoremap " ""<left> 
@@ -37,6 +42,16 @@ set bg=dark
 "inoremap ( ()<left>
 "inoremap [ []<left>
 "inoremap { {}<left>
+
+"-- EMMET CONFIG
+
+let g:user_emmet_settings = {
+						\ 'javascript':{
+							\ 'extends':'jsx',
+							\},
+						\}
+
+let g:user_emmet_leader_key='<C-Z>'
 
 "NERDTREE ctrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -62,3 +77,12 @@ let g:ale_fix_on_save = 1
 "Navigate between errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+"VIM-SURROUND
+"
+"enhance vim change, allowing to change surrounding tags.
+"
+"commands used
+"
+"cst - change surrounding tag
+"cst' - change surrounding tag to ' 
