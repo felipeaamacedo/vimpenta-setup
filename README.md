@@ -21,7 +21,7 @@ npm install --save-dev eslint prettier eslint-plugin-prettier eslint-config-pret
 
 2. Create the config ESLint file .eslintrc and the .prettierrc in the root of your project
 
-### .eslintrc
+### .eslintrc.json
 
 ```json
 {
